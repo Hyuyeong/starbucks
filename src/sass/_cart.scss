@@ -1,0 +1,163 @@
+.backdrop {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+
+  top: 10vh;
+  left: 25%;
+  width: 50vw;
+
+  margin: 0 auto;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  animation: slide-down 300ms ease-out forwards;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    width: 50vw;
+    margin: 0 auto;
+    // left: calc(50% - 20rem);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cart__items {
+  // font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  list-style: none;
+
+  max-height: 50vh;
+  overflow: scroll;
+  li {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 2rem 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  img {
+    width: 7rem;
+    margin-right: 1rem;
+    filter: blur(3px);
+  }
+}
+
+.cart__total {
+  font-size: 2.2rem;
+  font-weight: 700;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart__buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: end;
+}
+
+.modal__content {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cart {
+  &__detail {
+    font-size: 1.5rem;
+  }
+  &__item {
+    display: flex;
+    font-weight: 700;
+  }
+  &__price {
+    color: #ad5502;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    margin-right: 1rem;
+
+    button {
+      padding: 0.5rem 0.8rem;
+
+      cursor: pointer;
+    }
+
+    // padding: 1rem 2rem;
+  }
+}
+
+.checkout__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  .checkout__control {
+    gap: 0.5rem;
+    display: grid;
+    justify-content: start;
+
+    &__message {
+      color: $color-primary;
+    }
+  }
+
+  .checkout__button {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    button {
+      padding: 1rem 2rem;
+
+      border-radius: 100px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+        color: #000;
+      }
+    }
+
+    &-cancel {
+      background-color: orangered;
+      margin-left: auto;
+    }
+    &-confirm {
+      background-color: $color-primary;
+    }
+  }
+}
