@@ -3,6 +3,7 @@ import Header from './components/Header';
 import SectionA from './components/SectionA';
 import SectionB from './components/SectionB';
 import SectionC from './components/SectionC';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <SectionA />
       <SectionB />
       <SectionC />
+      <Footer />
     </Fragment>
   );
 }
